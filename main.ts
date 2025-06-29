@@ -25,6 +25,18 @@ export default class DynamicFullscreenPlugin extends Plugin {
       name: "Toggle note header",
       callback: this.toggleViewHeader.bind(this),
     });
+
+    this.addCommand({
+      id: "hide-all",
+      name: "Hide interface elements",
+      callback: this.hideAll.bind(this),
+    });
+
+    this.addCommand({
+      id: "show-all",
+      name: "Show interface elements",
+      callback: this.showAll.bind(this),
+    });
   }
 
   onunload() {}
@@ -88,5 +100,27 @@ export default class DynamicFullscreenPlugin extends Plugin {
       leaf?.containerEl.ownerDocument ??
       document;
     doc.body.classList.toggle("hide-view-header");
+  }
+
+  hideAll() {
+    const leaf = this.app.workspace.activeLeaf;
+    const doc =
+      leaf?.view.containerEl.ownerDocument ??
+      leaf?.containerEl.ownerDocument ??
+      document;
+    doc.body.classList.add("hide-interface", "hide-gutters", "hide-view-header");
+  }
+
+  showAll() {
+    const leaf = this.app.workspace.activeLeaf;
+    const doc =
+      leaf?.view.containerEl.ownerDocument ??
+      leaf?.containerEl.ownerDocument ??
+      document;
+    doc.body.classList.remove(
+      "hide-interface",
+      "hide-gutters",
+      "hide-view-header"
+    );
   }
 }
