@@ -52,6 +52,8 @@ export default class DynamicFullscreenPlugin extends Plugin {
   }
 
   toggleInterface() {
-    document.body.classList.toggle("hide-interface");
+    const leaf = this.app.workspace.activeLeaf;
+    const doc = leaf?.view.containerEl.ownerDocument ?? leaf?.containerEl.ownerDocument ?? activeDocument;
+    doc.body.classList.toggle("hide-interface");
   }
 }
