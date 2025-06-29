@@ -1,7 +1,7 @@
 {
-  "id": "obsidian-fullscreen-plugin",
-  "version": "0.1.2",
-  "description": "This plugin allows viewing a single document in fullscreen focus mode",
+  "id": "dynamic-fullscreen",
+  "version": "0.5.0",
+  "description": "Toggle fullscreen focus mode or hide interface elements like ribbons, headers and gutters",
   "main": "main.js",
   "scripts": {
     "dev": "rollup --config rollup.config.js -w",

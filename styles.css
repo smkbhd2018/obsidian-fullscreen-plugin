@@ -1,0 +1,14 @@
+body.hide-interface .workspace-ribbon,
+body.hide-interface .workspace-tab-header-container,
+body.hide-interface .titlebar,
+body.hide-interface .status-bar {
+  display: none !important;
+}
+
+body.hide-gutters .cm-gutters {
+  display: none !important;
+}
+
+body.hide-view-header .view-header {
+  display: none !important;
+}
