@@ -1,7 +1,7 @@
 {
   "id": "dynamic-fullscreen",
-  "version": "0.2.0",
-  "description": "Toggle fullscreen focus mode or hide interface elements",
+  "version": "0.3.0",
+  "description": "Toggle fullscreen focus mode or hide interface elements like ribbons, headers and gutters",
   "main": "main.js",
   "scripts": {
     "dev": "rollup --config rollup.config.js -w",

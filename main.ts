@@ -13,6 +13,18 @@ export default class DynamicFullscreenPlugin extends Plugin {
       name: "Toggle interface visibility",
       callback: this.toggleInterface.bind(this),
     });
+
+    this.addCommand({
+      id: "toggle-gutters",
+      name: "Toggle line number gutters",
+      callback: this.toggleGutters.bind(this),
+    });
+
+    this.addCommand({
+      id: "toggle-view-header",
+      name: "Toggle note header",
+      callback: this.toggleViewHeader.bind(this),
+    });
   }
 
   onunload() {}
@@ -53,7 +65,28 @@ export default class DynamicFullscreenPlugin extends Plugin {
 
   toggleInterface() {
     const leaf = this.app.workspace.activeLeaf;
-    const doc = leaf?.view.containerEl.ownerDocument ?? leaf?.containerEl.ownerDocument ?? activeDocument;
+    const doc =
+      leaf?.view.containerEl.ownerDocument ??
+      leaf?.containerEl.ownerDocument ??
+      document;
     doc.body.classList.toggle("hide-interface");
+  }
+
+  toggleGutters() {
+    const leaf = this.app.workspace.activeLeaf;
+    const doc =
+      leaf?.view.containerEl.ownerDocument ??
+      leaf?.containerEl.ownerDocument ??
+      document;
+    doc.body.classList.toggle("hide-gutters");
+  }
+
+  toggleViewHeader() {
+    const leaf = this.app.workspace.activeLeaf;
+    const doc =
+      leaf?.view.containerEl.ownerDocument ??
+      leaf?.containerEl.ownerDocument ??
+      document;
+    doc.body.classList.toggle("hide-view-header");
   }
 }
