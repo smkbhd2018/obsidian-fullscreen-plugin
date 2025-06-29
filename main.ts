@@ -1,11 +1,17 @@
 import { Plugin } from "obsidian";
 
-export default class FullScreenPlugin extends Plugin {
+export default class DynamicFullscreenPlugin extends Plugin {
   onload() {
     this.addCommand({
       id: "fullscreen-focus",
       name: "Fullscreen focus mode",
       callback: this.fullscreenMode.bind(this),
+    });
+
+    this.addCommand({
+      id: "toggle-interface",
+      name: "Toggle interface visibility",
+      callback: this.toggleInterface.bind(this),
     });
   }
 
@@ -43,5 +49,9 @@ export default class FullScreenPlugin extends Plugin {
     });
 
     fullscreenMutationObserver.observe(document.body, { childList: true });
+  }
+
+  toggleInterface() {
+    document.body.classList.toggle("hide-interface");
   }
 }

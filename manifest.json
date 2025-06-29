@@ -1,9 +1,9 @@
 {
-  "id": "obsidian-fullscreen-plugin",
-  "name": "Fullscreen mode plugin",
-  "version": "0.1.2",
+  "id": "dynamic-fullscreen",
+  "name": "Dynamic Fullscreen",
+  "version": "0.2.0",
   "minAppVersion": "0.12.0",
-  "description": "This plugin allows viewing a single document in fullscreen focus mode",
+  "description": "Toggle fullscreen focus mode or hide interface elements",
   "author": "Razum",
   "authorUrl": "https://github.com/Razumihin",
   "isDesktopOnly": false

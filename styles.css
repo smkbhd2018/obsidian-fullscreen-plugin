@@ -1,0 +1,6 @@
+body.hide-interface .workspace-ribbon,
+body.hide-interface .workspace-tab-header-container,
+body.hide-interface .titlebar,
+body.hide-interface .status-bar {
+  display: none !important;
+}
